@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -138,40 +138,62 @@
     text-decoration: underline;
   }
 
+    /* Theme palettes (override previous variables) */
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --text:#0e1325;
+    --muted:#5a6573;
+    --accent:#0ea5e9;
+    --accent-2:#7c3aed;
+    --ring:#0891b2;
+    --shadow:0 10px 25px rgba(2,6,23,.08);
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#0b1020;
+    --card:#111632;
+    --text:#e8ecf1;
+    --muted:#a9b4c2;
+    --accent:#0ea5e9;
+    --accent-2:#7c3aed;
+    --ring:#22d3ee;
+    --shadow:0 10px 25px rgba(0,0,0,.35);
+  }
+
+
   </style>
-  <script>
-    // Simple dark/light toggle saved in localStorage
-    const THEME_KEY = "pref-theme";
-    function applyTheme(t){
-      if(t === 'light'){
-        document.documentElement.style.colorScheme = 'light';
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0ea5e9');
-      } else {
-        document.documentElement.style.colorScheme = 'dark';
-        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0ea5e9');
-      }
-    }
-    function initTheme(){
-      const saved = localStorage.getItem(THEME_KEY);
-      if(saved){ applyTheme(saved); return; }
-      // otherwise rely on prefers-color-scheme; CSS handles colors
-    }
-    function toggleTheme(){
-      const now = document.documentElement.style.colorScheme;
-      const next = now === 'light' ? 'dark' : 'light';
-      localStorage.setItem(THEME_KEY, next);
-      applyTheme(next);
-    }
-    document.addEventListener('DOMContentLoaded', initTheme);
-    function copyEmail(){
-      const el = document.getElementById('email');
-      navigator.clipboard.writeText(el.value).then(()=>{
-        const btn = document.getElementById('copybtn');
-        btn.textContent = 'Copied!';
-        setTimeout(()=> btn.textContent = 'Copy', 1200);
-      });
-    }
-  </script>
+  
+<!-- THEME JS (replaces your old theme script) -->
+<script>
+  const THEME_KEY = 'pref-theme';
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
+
+  // Set and remember the theme by toggling a data attribute on <html>
+  function setTheme(name){
+    document.documentElement.setAttribute('data-theme', name);
+    localStorage.setItem(THEME_KEY, name);
+    // keep the mobile address bar color sensible
+    if (metaTheme) metaTheme.setAttribute('content', name === 'dark' ? '#0b1020' : '#0ea5e9');
+  }
+
+  // On load: use saved theme or default to light
+  function initTheme(){
+    const saved = localStorage.getItem(THEME_KEY);
+    setTheme(saved || 'light');
+  }
+
+  // Called by your button
+  function toggleTheme(){
+    const cur = document.documentElement.getAttribute('data-theme') || 'light';
+    setTheme(cur === 'light' ? 'dark' : 'light');
+  }
+
+  document.addEventListener('DOMContentLoaded', initTheme);
+</script>
+
+
 </head>
 <body>
   <div class="wrap">
