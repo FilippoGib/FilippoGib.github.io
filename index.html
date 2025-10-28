@@ -118,88 +118,63 @@
   };
 
   // ========== Virtual FS ==========
-  // Types: dir | file | link | bin (fake binary)
-  const FS = {
-    type: 'dir', name: '/', children: {
-      home: { type: 'dir', name: 'home', children: {
-        filippo: { type: 'dir', name: 'filippo', children: {
-          '.notes': { type: 'dir', name: '.notes', children: {
-            'ideas.txt': { type:'file', name:'ideas.txt', content:
-`- ...
+// Types: dir | file | link | bin (fake binary)
+const FS = {
+  type: 'dir', name: '/', children: {
+    home: { type: 'dir', name: 'home', children: {
+      filippo: { type: 'dir', name: 'filippo', children: {
+        '.notes': { type: 'dir', name: '.notes', children: {
+          'ideas.txt': { type:'file', name:'ideas.txt', content:
+`- coming soon...
 - ...
 - ...`}
-          }},
-          '.secrets': { type: 'dir', name: '.secrets', children: {
-            'flag.txt': { type:'file', name:'flag.txt', locked:true, content:
-`Congrats. If you're reading this, you found the hidden area.
-Ask me about "driverless freedom" in DMs.`},
-            'token.txt': { type:'file', name:'token.txt', locked:true, content:
-`flag{perception_planning_control}`}
-          }},
-          'README.txt': { type:'file', name:'README.txt', content:
+        }},
+        'README.txt': { type:'file', name:'README.txt', content:
 `I am not a web dev, please don't judge me too harshly.`},
-          about: { type:'dir', name:'about', children: {
-            'whoami.txt': { type:'file', name:'whoami.txt', content:
-`Perception → planning → control. Sim-to-track deployment.
-Python/C++/ROS, data pipelines, evaluation.`}
-          }},
-          projects: { type:'dir', name:'projects', children: {
-            'mmr-driverless': { type:'dir', name:'mmr-driverless', children: {
-              'README.md': { type:'file', name:'README.md', content:
-`# MMR E-Driverless
-- Led autonomy stack (perception, planning, control).
-- Sim loop → track testing, failure-mode handling.
-- Latency, observability, logs, eval dashboards.`},
-              'log.bin': { type:'bin',  name:'log.bin', size: 20480 }
-            }},
-            'playground': { type:'dir', name:'playground', children: {
-              'sandbox.txt': { type:'file', name:'sandbox.txt', content:
-`Ideas:
-- Behavior cloning tests
-- LiDAR-camera fusion
-- Stronger sim randomization`}
-            }}
-          }},
-          links: { type:'dir', name:'links', children: {
-            'github.url':    { type:'link', name:'github.url',    href: LINKS.github },
-            'linkedin.url':  { type:'link', name:'linkedin.url',  href: LINKS.linkedin },
-            'instagram.url': { type:'link', name:'instagram.url', href: LINKS.instagram },
-            'cv.url':        { type:'link', name:'cv.url',        href: LINKS.cv },
-            'email.url':     { type:'link', name:'email.url',     href: LINKS.email }
-          }},
-          'education.txt': { type:'file', name:'education.txt', content:
-`Oct 2024 — Present  Master's in AI Engineering • UNIMORE
-Sep 2021 — Oct 2024  BSc Computer Engineering • UNIMORE`},
-          'experience.log': { type:'file', name:'experience.log', content:
-`Sep 2024 — Oct 2025  Autonomous Driving Division Leader  • MMR E-Driverless
-Sep 2023 — Sep 2024  Autonomous Driving Division Member  • MMR E-Driverless`}
-        }}
-      }},
-      etc: { type: 'dir', name: 'etc', children: {
-        issue: { type:'file', name:'issue', content:
+        about: { type:'dir', name:'about', children: {
+          'filippo_gibertini.txt': { type:'file', name:'filippo_gibertini.txt', content:
+`Born in 2002.\nBased in Modena.\nFavourite color: green.\nFavourite anime: One Piece.\nFavourite manga: Vinland Saga.`},
+          'skills.c':{type: 'file' ,name:'skills.c',content: 
+          '\nProgramming: C, C++, Python, Java, Bash\n\nHardware: NVIDIA Jetson AGX Orin, NVIDIA Jetson Xavier, AMD Kria, Raspberry Pi, Arduino\n\nSimulation: MATLAB, Simulink, SimPy\n\nML / DL: OpenCV, PyTorch, NumPy, Pandas, Ultralytics, Gymnasium\n\nOS & Tools: Linux, Docker, Slurm, Proxmox, Git, GitHub, ROS, ROS2, RTOS'}
+        }},
+        links: { type:'dir', name:'links', children: {
+          'github.url':    { type:'link', name:'github.url',    href: LINKS.github },
+          'linkedin.url':  { type:'link', name:'linkedin.url',  href: LINKS.linkedin },
+          'instagram.url': { type:'link', name:'instagram.url', href: LINKS.instagram },
+          'cv.url':        { type:'link', name:'cv.url',        href: LINKS.cv },
+          'email.url':     { type:'link', name:'email.url',     href: LINKS.email }
+        }},
+        'education.txt': { type:'file', name:'education.txt', content:
+`Oct 2024 — Present  Master's in AI Engineering @ UNIMORE
+Sep 2021 — Oct 2024  BSc Computer Engineering @ UNIMORE`},
+        'experience.log': { type:'file', name:'experience.log', content:
+`Sep 2024 — Oct 2025  Autonomous Driving Division Leader  @ MMR E-Driverless
+Sep 2023 — Sep 2024  Autonomous Driving Division Member  @ MMR E-Driverless`}
+      }}
+    }},
+    etc: { type: 'dir', name: 'etc', children: {
+      issue: { type:'file', name:'issue', content:
 `fg@net — unauthorized access is monitored.`},
-        motd: { type:'file', name:'motd', content:
+      motd: { type:'file', name:'motd', content:
 `Welcome to fg@net — type "help" for commands.
-Hint: some things are hidden. Try ls -a
-Another hint: whoami might whisper the passphrase…`},
-        'fg.key': { type:'file', name:'fg.key', content:
-`passphrase hint → role: "driverless"` }
-      }},
-      var: { type:'dir', name:'var', children:{
-        log: { type:'dir', name:'log', children: {
-          'system.log': { type:'file', name:'system.log', content:
+Hint: some things are hidden. Try ls -a`}
+    }},
+    var: { type:'dir', name:'var', children:{
+      log: { type:'dir', name:'log', children: {
+        'system.log': { type:'file', name:'system.log', content:
 `[ok] boot: pages online
 [ok] fs: vfs mounted
 [warn] telemetry disabled
 [ok] user: filippo@net ready`}
-        }}
-      }},
-      sys: { type:'dir', name:'sys', children:{
-        version: { type:'file', name:'version', content:`fg@net 1.2.0` },
-        board:   { type:'file', name:'board', content:`UNIMORE-x86_64 • MMR Labs` }
       }}
-    }
-  };
+    }},
+    sys: { type:'dir', name:'sys', children:{
+      version: { type:'file', name:'version', content:`fg@net 1.2.0` },
+      board:   { type:'file', name:'board', content:`UNIMORE-x86_64 @ MMR Labs` }
+    }}
+  }
+};
+
 
   // ========== Shell State ==========
   let cwd = localStorage.getItem('fg_cwd') || '/home/filippo';
@@ -349,33 +324,38 @@ Another hint: whoami might whisper the passphrase…`},
 `Available commands:
   help                  show this message
   whoami                short bio
-  sysinfo               minimal system info
   links                 list important links
-  open [name|path]      open a link (github, linkedin, instagram, cv, email, or *.url path)
-  experience | education | contact
-  clear                 clear all pages
-  speed [ms]            set slide duration`;
+  open [link]           open a link (github, linkedin, instagram, cv, email, or *.url path)
+  experience            learn more about my experience
+  education             learn more about my education
+  contacts              find out how to contact me
+  clear                 clear the screen
+  speed [ms]            regulate interface speed`;
 
-  const WHOAMI = `Filippo Gibertini — AI engineer focused on autonomous systems and machine learning.
-Master's student @ UNIMORE. Autonomous Driving Division Lead @ MMR E-Driverless.`;
+  const WHOAMI = `\nFilippo Gibertini — AI engineer focused on autonomous systems and machine learning.\n
+Artificial Intelligence Engineering Master's student @ UNIMORE.\n\nAutonomous Driving Division Leader @ MMR E-Driverless.`;
 
-  const SYSINFO =
-`                 fg@net
-                  user : filippo
-                  host : net
-                  cwd  : ~
-                  ver  : ${getNode('/sys/version').content}`;
-
+const SYSINFO = `
+  _________               __                 
+ /   _____/__.__. _______/  |_  ____   _____        fg@net
+ \\_____  <   |  |/  ___/\\   __\\/ __ \\ /     \\       user : you
+ /        \\___  |\\___ \\  |  | \\  ___/|  Y Y  \\      host : net
+/_______  / ____/____  > |__|  \\___  >__|_|  /      ver  : ${getNode('/sys/version').content}
+        \\/\\/         \\/            \\/      \\/       
+`;
+       
+                 
   const XP =
-`Sep 2024 — Oct 2025  Autonomous Driving Division Leader  • MMR E-Driverless
-  Led perception → planning → control stack, sim-to-track deployment.
+`\nSep 2024 — Oct 2025  Autonomous Driving Division Leader  @ MMR E-Driverless\n
+    Oversee the design, development, and deployment of perception, planning, simulation and control
+    software.
 
-Sep 2023 — Sep 2024  Autonomous Driving Division Member  • MMR E-Driverless
-  Contributed to autonomy modules, simulation, and field validation.`;
+Sep 2023 — Sep 2024  Autonomous Driving Division Member  @ MMR E-Driverless\n
+    Contributed to developing and testing of path-planning and control modules.`;
 
   const EDU =
-`Oct 2024 — Present  Master's Degree in AI Engineering  • UNIMORE
-Sep 2021 — Oct 2024  Bachelor’s Degree in Computer Engineering  • UNIMORE`;
+`\nOct 2024 — Present  Master's Degree in AI Engineering  @ UNIMORE\n
+Sep 2021 — Oct 2024  Bachelor’s Degree in Computer Engineering  @ UNIMORE`;
 
   function run(cmd){
     // 1) Create a fresh page (previous page remains above)
@@ -396,7 +376,7 @@ Sep 2021 — Oct 2024  Bachelor’s Degree in Computer Engineering  • UNIMORE`
 
     switch(base){
       case 'help':       echo(HELP); break;
-      case 'whoami':     echo(WHOAMI); echo('hint: passphrase relates to the role.'); break;
+      case 'whoami':     echo(WHOAMI);  break;
       case 'sysinfo':    echo(SYSINFO); break;
 
       case 'links':
@@ -520,9 +500,9 @@ Sep 2021 — Oct 2024  Bachelor’s Degree in Computer Engineering  • UNIMORE`
       case 'experience': echo(XP); break;
       case 'education':  echo(EDU); break;
 
-      case 'contact':
+      case 'contacts':
         echo('email: filippogib@gmail.com');
-        echoHTML(`[ actions ] <a href="${LINKS.email}">email</a>  |  <a href="#" onclick="navigator.clipboard.writeText('filippogib@gmail.com'); return false;">copy</a>`);
+        echoHTML(`       <a href="${LINKS.email}">email_to</a>  |  <a href="#" onclick="navigator.clipboard.writeText('filippogib@gmail.com'); return false;">copy</a>`);
         break;
 
       case 'clear':
