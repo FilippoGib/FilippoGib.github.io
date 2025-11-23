@@ -6,8 +6,8 @@ export const PERSONAL_INFO = {
   tagline: "Developing autonomous systems, computer vision pipelines, and deep learning solutions.",
   email: "filippogib@gmail.com",
   github: "https://github.com/FilippoGib",
-  linkedin: "https://www.linkedin.com/in/filippo-gibertini", // Please verify this URL is correct
-  resumeLink: "/filippo_gibertini_curriculum.pdf", // We will move the PDF file in the next step
+  linkedin: "https://www.linkedin.com/in/filippo-gibertini", 
+  resumeLink: "/filippo_gibertini_curriculum.pdf", 
 };
 
 export const EXPERIENCE: Experience[] = [
@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
     title: "Visual Mapping Pipeline",
     description: "Visual-Inertial Simultaneous Localization and Mapping (SLAM) pipeline tailored for Formula Student competitions, leveraging deep learning and classical CV.",
     technologies: ["Python", "C++", "OpenCV", "PyTorch", "SLAM"],
-    link: "https://github.com/FilippoGib" // Update if you have a specific repo link
+    link: "https://github.com/FilippoGib" 
   },
   {
     title: "Real-Time Race-Line Tracker",
