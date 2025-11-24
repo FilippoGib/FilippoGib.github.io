@@ -53,7 +53,6 @@ const App: React.FC = () => {
 
         {/* Footer */}
         <footer className="py-12 text-center text-zinc-600 text-sm">
-          <p>Designed & Built by Alex Dev</p>
           <p className="mt-2">Powered by React & Tailwind</p>
         </footer>
       </main>
