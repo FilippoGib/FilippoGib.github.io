@@ -2,11 +2,11 @@ import { Experience, Project, Education } from './types';
 
 export const PERSONAL_INFO = {
   name: "Filippo Gibertini",
-  title: "Autonomous Driving & AI Engineer",
-  tagline: "Developing autonomous systems, computer vision pipelines, and deep learning solutions.",
+  title: "Autonomous Driving & AI Engineering student",
+  tagline: "Developing autonomous driving algorithms, computer vision applications, and AI solutions.",
   email: "filippogib@gmail.com",
   github: "https://github.com/FilippoGib",
-  linkedin: "https://www.linkedin.com/in/filippo-gibertini", 
+  linkedin: "https://www.linkedin.com/in/filippo-gibertini-219519288/", 
   resumeLink: "/filippo_gibertini_curriculum.pdf", 
 };
 
@@ -37,19 +37,25 @@ export const PROJECTS: Project[] = [
     title: "Visual Mapping Pipeline",
     description: "Visual-Inertial Simultaneous Localization and Mapping (SLAM) pipeline tailored for Formula Student competitions, leveraging deep learning and classical CV.",
     technologies: ["Python", "C++", "OpenCV", "PyTorch", "SLAM"],
-    link: "https://github.com/FilippoGib" 
+    link: "https://github.com/FilippoGib/visual_mapper.git" 
   },
   {
     title: "Real-Time Race-Line Tracker",
     description: "Real-time control algorithm based on LQR for race-line tracking, achieving a 35% reduction in lateral deviation during simulation and track tests.",
     technologies: ["Control Theory", "LQR", "Simulation", "C++"],
-    link: "https://github.com/FilippoGib"
+    link: "https://github.com/FilippoGib/new_LQR_control.git"
   },
   {
     title: "Smart Fridge",
     description: "Hardware-Software IoT solution exploiting object detection and OCR to track groceries and reduce food waste.",
     technologies: ["Computer Vision", "OCR", "Object Detection", "IoT"],
-    link: "https://github.com/FilippoGib"
+    link: "https://github.com/FilippoGib/Smart_Fridge.git"
+  },
+  {
+    title: "Autonomous Driving Systems",
+    description: "Developing autonomous driving solutions for the university course of Autonomous Driving Systems.",
+    technologies: ["LiDAR", "Kalman Filter", "Computer Vision", "Vehicle Dynamics"],
+    link: "https://github.com/FilippoGib/Autonomous_Driving_Systems.git"
   }
 ];
 

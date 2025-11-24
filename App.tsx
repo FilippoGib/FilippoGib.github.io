@@ -17,7 +17,7 @@ const App: React.FC = () => {
       <nav className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-zinc-950/80 border-b border-white/5 h-16 flex items-center">
         <div className="max-w-6xl mx-auto w-full px-6 flex justify-between items-center">
           <div className="text-xl font-bold tracking-tighter text-zinc-100">
-            ad<span className="text-indigo-500">.</span>
+            FG<span className="text-indigo-500">.</span>
           </div>
           <div className="flex gap-8 text-sm font-medium text-zinc-400">
             <a href="#experience" className="hover:text-white transition-colors">Experience</a>

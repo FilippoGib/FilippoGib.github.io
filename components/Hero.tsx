@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
           {PERSONAL_INFO.name}.
         </h1>
         <h2 className="text-4xl md:text-6xl font-bold text-zinc-400 tracking-tight">
-          I build things for the web.
+          I am passionate about AI and autonomous systems.
         </h2>
         <p className="max-w-xl text-zinc-400 text-lg leading-relaxed mt-4">
           {PERSONAL_INFO.tagline}
