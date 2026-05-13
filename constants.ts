@@ -1,9 +1,9 @@
-import { Experience, Project, Education } from './types';
+import { Experience, Project, Education, ExperienceAbroad } from './types';
 
 export const PERSONAL_INFO = {
   name: "Filippo Gibertini",
   title: "Autonomous Driving & AI Engineering student",
-  tagline: "Developing autonomous driving algorithms, computer vision applications, and AI solutions.",
+  tagline: "Developing autonomous behaviour algorithms, computer vision applications, and ML solutions.",
   email: "filippogib@gmail.com",
   github: "https://github.com/FilippoGib",
   linkedin: "https://www.linkedin.com/in/filippo-gibertini-219519288/", 
@@ -12,9 +12,21 @@ export const PERSONAL_INFO = {
 
 export const EXPERIENCE: Experience[] = [
   {
+    role: "Computer Vision Research Intern",
+    company: "Sony Europe",
+    location: "Zurich, Switzerland",
+    period: "Feb 2026 — Jul 2026",
+    description: [
+      "Developing computer vision algorithms for advanced camera systems used in industrial robotics applications.",
+      "Specialized in handling, processing, and synthesizing High Dynamic Range image data.",
+      "Gained a strong understanding of project development workflows while significantly improving software engineering skills."
+    ]
+  },
+  {
     role: "Autonomous Driving Lead",
     company: "MMR E-Driverless",
-    period: "Sept 2024 — Present",
+    location: "Modena, Italy",
+    period: "Sept 2024 — Jan 2026",
     description: [
       "Leading the autonomous driving division of a Formula Student Driverless team.",
       "Managing a cross-functional team of computer, software, and AI engineering students.",
@@ -24,6 +36,7 @@ export const EXPERIENCE: Experience[] = [
   {
     role: "Autonomous Driving Software Engineer",
     company: "MMR E-Driverless",
+    location: "Modena, Italy",
     period: "Sept 2023 — Sept 2024",
     description: [
       "Collaborated with the team on the development and testing of path-planning and control modules.",
@@ -69,5 +82,18 @@ export const EDUCATION: Education[] = [
     degree: "B.S. Computer Engineering",
     school: "University of Modena and Reggio-Emilia",
     year: "2021 — 2024"
+  }
+];
+
+export const EXPERIENCE_ABROAD: ExperienceAbroad[] = [
+  {
+    program: "Erasmus+ Traineeship",
+    location: "Zurich, Switzerland",
+    period: "Feb 2026 — Jul 2026"
+  },
+  {
+    program: "Highschool Exchange Student Program",
+    location: "Sydney, Australia",
+    period: "Aug 2019 — Dec 2019"
   }
 ];

@@ -6,7 +6,7 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-24 px-6 lg:px-24 max-w-5xl mx-auto">
       <div className="flex items-center gap-4 mb-12">
-        <h2 className="text-3xl font-bold text-zinc-100">02. Some Things I've Built</h2>
+        <h2 className="text-3xl font-bold text-zinc-100">04. Some Things I've Built</h2>
         <div className="h-px bg-zinc-800 flex-grow max-w-xs"></div>
       </div>
 

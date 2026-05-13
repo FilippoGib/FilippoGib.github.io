@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import ExperienceAbroad from './components/ExperienceAbroad';
 import Projects from './components/Projects';
 import { EDUCATION } from './constants';
 
@@ -21,8 +22,9 @@ const App: React.FC = () => {
           </div>
           <div className="flex gap-8 text-sm font-medium text-zinc-400">
             <a href="#experience" className="hover:text-white transition-colors">Experience</a>
-            <a href="#projects" className="hover:text-white transition-colors">Projects</a>
             <a href="#education" className="hover:text-white transition-colors">Education</a>
+            <a href="#experience-abroad" className="hover:text-white transition-colors">Time Abroad</a>
+            <a href="#projects" className="hover:text-white transition-colors">Some Things I&apos;ve Built</a>
           </div>
         </div>
       </nav>
@@ -30,12 +32,9 @@ const App: React.FC = () => {
       <main>
         <Hero />
         <Experience />
-        <Projects />
-        
-        {/* Education Section (Inline simple version) */}
         <section id="education" className="py-24 px-6 lg:px-24 max-w-5xl mx-auto">
           <div className="flex items-center gap-4 mb-12">
-            <h2 className="text-3xl font-bold text-zinc-100">03. Education</h2>
+            <h2 className="text-3xl font-bold text-zinc-100">02. Education</h2>
             <div className="h-px bg-zinc-800 flex-grow max-w-xs"></div>
           </div>
           <div className="space-y-6">
@@ -50,6 +49,9 @@ const App: React.FC = () => {
             ))}
           </div>
         </section>
+
+        <ExperienceAbroad />
+        <Projects />
 
         {/* Footer */}
         <footer className="py-12 text-center text-zinc-600 text-sm">

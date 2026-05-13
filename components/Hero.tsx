@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         <h2 className="text-4xl md:text-6xl font-bold text-zinc-400 tracking-tight">
           I am passionate about AI and autonomous systems.
         </h2>
-        <p className="max-w-xl text-zinc-400 text-lg leading-relaxed mt-4">
+        <p className="max-w-4xl text-zinc-400 text-lg leading-relaxed mt-4 md:whitespace-nowrap">
           {PERSONAL_INFO.tagline}
         </p>
 

@@ -23,7 +23,10 @@ const Experience: React.FC = () => {
               <span className="text-sm font-mono text-zinc-500 mt-1 sm:mt-0">{job.period}</span>
             </div>
             
-            <h4 className="text-lg text-indigo-400 font-medium mb-4">{job.company}</h4>
+            <div className="mb-4 text-lg text-indigo-400 font-medium">
+              <h4>{job.company}</h4>
+              <p className="text-sm text-zinc-500 font-normal mt-1">{job.location}</p>
+            </div>
             
             <ul className="space-y-3">
               {job.description.map((desc, i) => (
